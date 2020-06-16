@@ -2,10 +2,10 @@ import React from "react";
 
 import { TaskData, ActionsData } from "../Task/Task.stories";
 
-import TaskList from "./TaskList";
+import { PureTaskList } from "./TaskList";
 
 export default {
-  component: TaskList,
+  component: PureTaskList,
   title: "TaskList",
   decorators: [(story) => <div style={{ padding: "3rem" }}>{story()}</div>],
   excludeStories: /.*Data$/,
@@ -22,10 +22,10 @@ export const defaultTasksData = [
 
 export const withPinnedTasksData = [...defaultTasksData.slice(0, 5), { id: "6", title: "Task 6 (pinned)", state: "TASK_PINNED" }];
 
-export const Default = () => <TaskList tasks={defaultTasksData} {...ActionsData} />;
+export const Default = () => <PureTaskList tasks={defaultTasksData} {...ActionsData} />;
 
-export const WithPinnedTasks = () => <TaskList tasks={withPinnedTasksData} {...ActionsData} />;
+export const WithPinnedTasks = () => <PureTaskList tasks={withPinnedTasksData} {...ActionsData} />;
 
-export const Loading = () => <TaskList loading tasks={[]} {...ActionsData} />;
+export const Loading = () => <PureTaskList loading tasks={[]} {...ActionsData} />;
 
-export const Empty = () => <TaskList tasks={[]} {...ActionsData} />;
+export const Empty = () => <PureTaskList tasks={[]} {...ActionsData} />;
